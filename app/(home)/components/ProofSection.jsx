@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function ProofSection() {
   return (
     <section className="py-20 text-center">
-      <h2 className="text-3xl font-bold">What I've Delivered</h2>
+      <h2 className="text-3xl font-bold">What I&apos;ve Delivered</h2>
 
       <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
         <div>
