@@ -1,168 +1,175 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiBriefcase, HiCalendar } from 'react-icons/hi';
-import { config } from '@/config';
-
-const containerAnimation = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.15
-        }
-    }
-};
-
-const itemAnimation = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5,
-            ease: [0.23, 1, 0.32, 1]
-        }
-    }
-};
+import { HiBriefcase } from 'react-icons/hi';
 
 const ExperienceSection = () => {
-    const experiences = config.experiences || [];
+  return (
+    <>
+      {/* ================= EXPERIENCE ================= */}
+      <section className="py-12 relative" id="experience">
 
-    if (!experiences || experiences.length === 0) {
-        return null;
-    }
+        {/* 🔥 BACKGROUND GLOW */}
+        <div className="absolute inset-0 -z-10 flex justify-center">
+          <div className="w-[400px] h-[400px] bg-white/5 blur-3xl rounded-full" />
+        </div>
 
-    return (
-        <section className="py-24" id="experience">
-            <div className="container mx-auto px-6">
-                <motion.div
-                    variants={containerAnimation}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    className="space-y-16"
-                >
-                    <div className="max-w-2xl mx-auto text-center space-y-6">
-                        <motion.div
-                            variants={itemAnimation}
-                            className="inline-flex items-center space-x-2 bg-secondary/10 border-[1.8px] border-zinc-900/70 px-4 py-2 rounded-full text-primary backdrop-blur-sm"
-                        >
-                            <HiBriefcase className="w-5 h-5 text-primary" />
-                            <span className="text-sm font-medium text-primary">
-                                Professional Experience
-                            </span>
-                        </motion.div>
+        <div className="container mx-auto px-6 space-y-16">
 
-                        <motion.div variants={itemAnimation} className="space-y-2">
-                            <h2 className="text-3xl md:text-4xl font-bold text-primary">
-                                Work Experience
-                            </h2>
-                            <p className="text-lg text-muted-foreground">
-                                A journey through my professional career and key achievements
-                            </p>
-                        </motion.div>
-                    </div>
+          {/* HEADER */}
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Experience
+            </h2>
+            <p className="text-gray-400">
+              Real-world AI systems built for production use
+            </p>
+          </div>
 
-                    <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            variants={containerAnimation}
-                            className="space-y-8"
-                        >
-                            {experiences.map((exp, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={itemAnimation}
-                                    className="relative"
-                                >
-                                    <div className="flex gap-6">
-                                        {/* Timeline line */}
-                                        <div className="flex flex-col items-center">
-                                            <div className="w-12 h-12 rounded-xl bg-black border border-white/30 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:border-white/60 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]">
-                                                <HiBriefcase className="w-6 h-6 text-white" />
-                                            </div>
-                                            {index !== experiences.length - 1 && (
-                                                <div className="w-0.5 h-full bg-gradient-to-b from-white/20 to-transparent mt-4" />
-                                            )}
-                                        </div>
+          {/* METRICS */}
+          <div className="flex flex-wrap justify-center gap-10 text-center">
+            {[
+              { value: "5+", label: "Clients" },
+              { value: "10+", label: "AI Systems" },
+              { value: "3+", label: "RAG Pipelines" },
+              { value: "100%", label: "Satisfaction" }
+            ].map((item, i) => (
+              <div key={i}>
+                <h3 className="text-3xl font-bold text-white">{item.value}</h3>
+                <p className="text-sm text-gray-400">{item.label}</p>
+              </div>
+            ))}
+          </div>
 
-                                        {/* Content */}
-                                        <div className="flex-1 pb-8">
-                                            <div className="bg-black border border-white/30 rounded-2xl p-6 backdrop-blur-md shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_10px_rgba(255,255,255,0.05)] hover:border-white/60 transition-all duration-300 group relative overflow-hidden hover:shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_20px_rgba(255,255,255,0.1)]">
-                                                {/* Shiny overlay effect */}
-                                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shiny-sweep" />
-                                                </div>
-                                                
-                                                {/* Glossy shine effect */}
-                                                <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
-                                                    <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-2xl" />
-                                                </div>
-                                                
-                                                <div className="relative z-10">
-                                                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-                                                    <div>
-                                                        <h3 className="text-xl font-bold text-white mb-1">
-                                                            {exp.position}
-                                                        </h3>
-                                                        <p className="text-primary/80 font-medium">
-                                                            {exp.company}
-                                                        </p>
-                                                    </div>
-                                                    <div className="flex items-center gap-2 text-sm text-white/70">
-                                                        <HiCalendar className="w-4 h-4" />
-                                                        <span>{exp.period}</span>
-                                                    </div>
-                                                </div>
+          {/* MAIN CARD */}
+          <motion.div
+            className="max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_0_25px_rgba(255,255,255,0.08)]">
 
-                                                {exp.location && (
-                                                    <p className="text-sm text-white/60 mb-4">
-                                                         {exp.location}
-                                                    </p>
-                                                )}
+              {/* SHINE */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[shine_1.5s_linear]" />
+              </div>
 
-                                                {exp.description && (
-                                                    <p className="text-sm text-white/70 leading-relaxed mb-4">
-                                                        {exp.description}
-                                                    </p>
-                                                )}
+              {/* TITLE */}
+              <div className="flex items-center gap-2 mb-2">
+                <HiBriefcase className="text-white/70 group-hover:scale-110 transition" />
+                <h3 className="text-2xl font-bold text-white">
+                  Freelance AI Engineer
+                </h3>
+              </div>
 
-                                                {exp.responsibilities && exp.responsibilities.length > 0 && (
-                                                    <ul className="space-y-2">
-                                                        {exp.responsibilities.map((responsibility, idx) => (
-                                                            <li key={idx} className="flex items-start gap-2 text-sm text-white/70">
-                                                                <span className="text-white/40 mt-1.5">▸</span>
-                                                                <span>{responsibility}</span>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                )}
+              <p className="text-sm text-gray-400 mb-4">
+                Self-Employed • 2024 – Present • Remote
+              </p>
 
-                                                {exp.technologies && exp.technologies.length > 0 && (
-                                                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
-                                                        {exp.technologies.map((tech, idx) => (
-                                                            <span
-                                                                key={idx}
-                                                                className="text-xs bg-white/10 text-white px-3 py-1 rounded-full border border-white/20"
-                                                            >
-                                                                {tech}
-                                                            </span>
-                                                        ))}
-                                                    </div>
-                                                )}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-                    </div>
-                </motion.div>
+              <p className="text-gray-300 mb-6">
+                Built production AI systems including RAG pipelines,
+                LLM chatbots, and automation workflows.
+              </p>
+
+              {/* IMPACT */}
+              <div className="space-y-2 text-sm text-gray-300">
+                <p>🚀 Built 5+ AI systems including RAG pipelines and automation tools</p>
+                <p>⚡ Reduced manual workflows using AI automation (n8n, APIs)</p>
+                <p>🧠 Developed LLM-based chatbots with improved response accuracy</p>
+                <p>📊 Designed end-to-end pipelines (data → embeddings → API → deployment)</p>
+              </div>
+
+              {/* TECH */}
+              <div className="flex flex-wrap gap-2 mt-6 pt-6 border-t border-white/10">
+                {["Python", "FastAPI", "LangChain", "RAG", "LLMs", "Docker"].map((tech) => (
+                  <span key={tech} className="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/20">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
             </div>
-        </section>
-    );
+          </motion.div>
+
+          {/* MINI CARDS */}
+          <div className="grid md:grid-cols-2 gap-6 mt-12">
+
+            <div className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 transition">
+              <h3 className="text-md font-semibold text-white">
+                Deep Learning Intern
+              </h3>
+              <p className="text-xs text-gray-400 mb-2">
+                Oxi Academy • 2025
+              </p>
+              <p className="text-sm text-gray-400">
+                Built CNN & NLP models using TensorFlow & PyTorch.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 transition">
+              <h3 className="text-md font-semibold text-white">
+                Machine Learning Intern
+              </h3>
+              <p className="text-xs text-gray-400 mb-2">
+                Verzeo • 2024
+              </p>
+              <p className="text-sm text-gray-400">
+                Developed ML models and improved prediction accuracy.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= EDUCATION ================= */}
+      <section className="py-12" id="education">
+
+        <div className="max-w-2xl mx-auto text-center space-y-6">
+
+          <h2 className="text-2xl font-semibold text-white">
+            Education
+          </h2>
+
+          <div className="space-y-4">
+
+            <div className="p-5 rounded-xl bg-white/10 border border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+              <h3 className="text-lg font-semibold text-white">
+                MSc Artificial Intelligence
+              </h3>
+              <p className="text-sm text-gray-400">
+                University of East London • 2024 – 2026
+              </p>
+            </div>
+
+            <div className="p-5 rounded-xl bg-white/5 border border-white/10">
+              <h3 className="text-lg font-semibold text-white">
+                Diploma in Artificial Intelligence
+              </h3>
+              <p className="text-sm text-gray-400">
+                Completed 2025
+              </p>
+            </div>
+
+            <div className="p-5 rounded-xl bg-white/5 border border-white/10">
+              <h3 className="text-lg font-semibold text-white">
+                BSc Computer Science
+              </h3>
+              <p className="text-sm text-gray-400">
+                2021 – 2024
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    </>
+  );
 };
 
 export default ExperienceSection;
-

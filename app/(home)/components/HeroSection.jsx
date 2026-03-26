@@ -57,57 +57,93 @@ const HeroSection = () => {
           className="max-w-3xl mx-auto text-center space-y-8 relative"
         >
           <motion.div
-            variants={itemAnimation}
-            className="inline-flex items-center space-x-2 bg-secondary/10 border-[1.8px] border-zinc-900/70 px-4 py-2 rounded-full text-primary backdrop-blur-sm"
-          >
-            <HiCode className="w-5 h-5" />
-            <span className="text-sm font-medium">Welcome to my portfolio</span>
-          </motion.div>
-
-          <div className="space-y-4">
-            <motion.h1
               variants={itemAnimation}
-              className="text-4xl md:text-7xl font-bold tracking-tight"
+              className="inline-flex items-center space-x-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-white backdrop-blur-sm"
             >
-              <motion.span
-                variants={textAnimation}
-                className="block text-primary mb-2"
-              >
-                Hi, I'm {config.developer.name}
-              </motion.span>
-              <motion.span
-                variants={textAnimation}
-                className="block text-white/60 text-2xl md:text-4xl"
-              >
-I build web that builds brands.              </motion.span>
-            </motion.h1>
+              <span className="text-sm font-medium">
+              AI Engineer • 5 Active Clients • LLM & RAG Systems
+              </span>
+            </motion.div>
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-sm text-gray-300 backdrop-blur-sm">
+              📍 London, United Kingdom
+            </div>
+          <div className="space-y-4">
+          <motion.h1
+            variants={itemAnimation}
+            className="text-4xl md:text-7xl font-bold tracking-tight leading-tight"
+          >
+            <motion.span
+              variants={textAnimation}
+              className="block text-white mb-2"
+            >
+              I build AI systems that
+            </motion.span>
+
+            <motion.span
+              variants={textAnimation}
+              className="block text-white/70 text-2xl md:text-4xl"
+            >
+              understand, reason, and automate work
+            </motion.span>
+          </motion.h1>
           </div>
 
           <motion.p
-            variants={itemAnimation}
-            className="text-base sm:text-md text-muted-foreground leading-relaxed max-w-2xl mx-auto"
-          >
-           Full-stack builder creating digital experiences that respect humans and scale with clarity. Accessibility is my north star.
-          </motion.p>
+              variants={itemAnimation}
+              className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
+            >
+              AI Engineer based in London, specializing in LLMs, RAG pipelines, and intelligent automation.
+              Currently working with 5 active clients delivering production-ready AI systems
+              including chatbots, agentic workflows, and automation pipelines.
+            </motion.p>
 
           <motion.div
-            variants={itemAnimation}
-            className="flex flex-wrap gap-4 justify-center pt-6"
-          >
-            <Link href={"/projects"}>
-              <Button
-                variant="expandIcon"
-                Icon={HiArrowRight}
-                iconPlacement="right"
-                className="rounded-full px-6 py-6 text-base transition-all duration-300 hover:scale-105 font-semibold"
-              >
-                View Projects
-              </Button>
-            </Link>
-          </motion.div>
+              variants={itemAnimation}
+              className="flex flex-wrap gap-4 justify-center pt-6"
+            >
 
-     
+              {/* PROJECTS */}
+              <Link href={"/projects"}>
+                <Button
+                  className="rounded-full px-6 py-6 text-base font-semibold bg-white text-black hover:scale-105 transition"
+                >
+                  View Projects
+                </Button>
+              </Link>
 
+              {/* RESUME */}
+              <a href="/resume.pdf" download>
+                <Button
+                  variant="outline"
+                  className="rounded-full px-6 py-6 text-base border-white/20 hover:border-white/40"
+                >
+                  Download Resume
+                </Button>
+              </a>
+
+            </motion.div>
+            <motion.div
+              variants={itemAnimation}
+              className="grid grid-cols-3 gap-6 pt-10 text-center"
+            >
+
+              <div>
+                <h2 className="text-2xl font-bold text-white">5+</h2>
+                <p className="text-gray-400 text-sm">Active Clients</p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-white">10+</h2>
+                <p className="text-gray-400 text-sm">AI Projects</p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-white">1+</h2>
+                <p className="text-gray-400 text-sm">Years Experience in Freelance</p>
+              </div>
+
+            </motion.div>
+            <span className="text-primary">AI ystems</span>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

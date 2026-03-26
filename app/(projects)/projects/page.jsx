@@ -1,14 +1,15 @@
 "use client"
 import React from 'react';
 import BackgroundEffects from '@/components/ui/background-effects';
-import { config } from '@/config';
 import SectionTitle from './components/SectionTitle';
-import { ProjectsList } from './components/ProjectsList';
+import ProjectCategories from './components/ProjectCategories';
 
 const ProjectsPage = () => {
     return (
         <section className="py-16" id="projects">
-            <div className="container mx-auto px-6 md:px-64">
+
+            <div className="w-full px-6 md:px-16 lg:px-24">
+
                 <BackgroundEffects
                     variant="diagonal"
                     colors={{ first: "secondary", second: "secondary" }}
@@ -18,9 +19,13 @@ const ProjectsPage = () => {
 
                 <div className="relative">
                     <SectionTitle />
-                    <ProjectsList projects={config.projects} />
+
+                    {/* NEW CATEGORY UI */}
+                    <ProjectCategories />
+
                 </div>
             </div>
+
         </section>
     );
 };

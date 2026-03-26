@@ -2,19 +2,23 @@
 import React from 'react'
 import HeroSection from './components/HeroSection'
 import GithubProjects from './components/GithubProjects'
+import ProofSection from './components/ProofSection'
 import SkillsSection from './components/Skills'
 import ExperienceSection from './components/Experience'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { HiArrowRight } from 'react-icons/hi'
-
+import ResumeSection from './components/ResumeSection'
 const Home = () => {
   return (
     <div>
       <HeroSection />
+      <ProofSection />
       <ExperienceSection />
       <GithubProjects />
       <SkillsSection />
+      <ResumeSection />
+      
       
       {/* Contact Button Section */}
       <section className="py-16 pb-24">

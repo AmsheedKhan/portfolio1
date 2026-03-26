@@ -15,15 +15,30 @@ const geistSans = localFont({
 });
 
 export const metadata = {
-  title: "Huzaif\'s Portfolio",
+  title: "Amsheed\'s Portfolio",
   icons:{
 icon: "/logo.png"
   },
-  description: "Experienced fullstack developer specializing in modern web technologies. View my projects, skills, and experience.",
-  keywords: "fullstack developer,backend developer, frontend developer, web development, JavaScript,JS, C#, CSharp, React, Node.js, portfolio",
-  author: "Huzaif Ahmed",
+  description: "AI Engineer specializing in LLMs, RAG systems, deep learning, and intelligent automation. Building scalable AI solutions for real-world applications.",
+  keywords: "AI Engineer, Machine Learning, Deep Learning, NLP, LLM, RAG, LangChain, FastAPI, Python, Artificial Intelligence, AI Developer",
+  author: "Amsheed Nazeer",
   robots: "index, follow",
+  openGraph: {
+    title: "Amsheed Nazeer | AI Engineer",
+    description: "AI Engineer specializing in LLMs and RAG systems.",
+    url: "https://your-portfolio.com",
+    siteName: "Amsheed Portfolio",
+    images: [
+      {
+        url: "/preview.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (

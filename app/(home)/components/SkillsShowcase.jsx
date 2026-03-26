@@ -2,141 +2,171 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiCode } from 'react-icons/hi';
-import { FaReact, FaNodeJs, FaGithub, FaAws } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiTailwindcss, SiFigma, SiGreensock, SiThreedotjs, SiJavascript, SiMaterialdesign } from 'react-icons/si';
-import { TbBrandFramerMotion } from 'react-icons/tb';
+import { 
+  SiPython, SiTensorflow, SiPytorch, SiPostgresql, SiApachespark 
+} from "react-icons/si";
 
-const skills = [
-    { name: "AWS", icon: <FaAws className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1" },
-    { name: "React.js", icon: <FaReact className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "Express", icon: <SiExpress className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "MongoDB", icon: <SiMongodb className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 sm:row-span-2 row-span-1" },
-    { name: "Node.js", icon: <FaNodeJs className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1" },
-    { name: "GitHub", icon: <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "Tailwind", icon: <SiTailwindcss className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "GSAP", icon: <SiGreensock className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "Framer Motion", icon: <TbBrandFramerMotion className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "Three.js", icon: <SiThreedotjs className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1" },
-    { name: "Figma", icon: <SiFigma className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "Material UI", icon: <SiMaterialdesign className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-];
+import { FaBrain, FaDatabase, FaRobot, FaServer, FaTools } from "react-icons/fa";
+import { HiCode } from "react-icons/hi";
+import { SiHuggingface } from "react-icons/si";
+
+const skillCategories = [
+    {
+      title: "Core AI",
+      icon: <FaRobot />,
+      skills: [
+        { name: "LLMs", icon: <FaBrain />, highlight: true },
+        { name: "RAG Systems", icon: <FaDatabase />, highlight: true },
+        { name: "Agentic AI", icon: <FaRobot />, highlight: true },
+        { name: "AI Agents", icon: <FaRobot /> },
+        { name: "Multi-Agent Systems", icon: <FaRobot /> },
+  
+        { name: "Prompt Engineering", icon: <HiCode />, highlight: true },
+        { name: "Fine-tuning (LoRA, PEFT)", icon: <HiCode /> },
+  
+        { name: "Recommendation Systems", icon: <HiCode /> },
+        { name: "Expert Systems", icon: <HiCode /> },
+        { name: "LangChain", icon: <HiCode />, highlight: true },
+        { name: "LangGraph", icon: <HiCode />, highlight: true },
+        { name: "LlamaIndex", icon: <HiCode /> },
+        { name: "Knowledge Graphs", icon: <FaDatabase /> },
+      ]
+    },
+  
+    {
+      title: "Machine Learning",
+      icon: <FaBrain />,
+      skills: [
+        { name: "Machine Learning", icon: <FaBrain /> },
+        { name: "Deep Learning (CNN, LSTM, Transformers)", icon: <FaBrain /> },
+  
+        { name: "TensorFlow", icon: <SiTensorflow /> },
+        { name: "PyTorch", icon: <SiPytorch /> },
+  
+        { name: "PySpark", icon: <SiApachespark /> },
+        { name: "MATLAB", icon: <HiCode /> },{ name: "MLOps", icon: <HiCode />, highlight: true },
+        { name: "Model Monitoring", icon: <HiCode /> },
+        { name: "Azure ML", icon: <HiCode /> }
+      ]
+    },
+  
+    {
+      title: "Data & Backend",
+      icon: <FaServer />,
+      skills: [
+        { name: "Python", icon: <SiPython />, highlight: true },
+  
+        { name: "SQL", icon: <FaDatabase /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        { name: "Hive", icon: <FaDatabase /> },
+  
+        { name: "FastAPI", icon: <HiCode />, highlight: true },
+  
+        { name: "Embeddings", icon: <FaDatabase /> },
+        { name: "Semantic Search", icon: <FaDatabase /> },
+        { name: "Vector DBs (Qdrant, FAISS)", icon: <FaDatabase /> }
+      ]
+    },
+  
+    {
+      title: "AI Systems & MLOps",
+      icon: <FaServer />,
+      skills: [
+        { name: "AI System Design", icon: <HiCode />, highlight: true },
+        { name: "RAG Architecture Design", icon: <HiCode /> },
+        { name: "Evaluation & Guardrails", icon: <HiCode /> },
+  
+        { name: "Model Deployment", icon: <HiCode /> },
+        { name: "Docker", icon: <FaTools /> },
+        { name: "CI/CD for ML", icon: <HiCode /> }
+      ]
+    },
+  
+    {
+      title: "Tools & Platforms",
+      icon: <FaTools />,
+      skills: [
+        { name: "Hugging Face", icon: <SiHuggingface />, highlight: true },
+        { name: "Ollama", icon: <FaRobot />, highlight: true },
+        { name: "Claude", icon: <FaRobot />, highlight: true },
+  
+        { name: "n8n", icon: <HiCode />, highlight: true },
+        { name: "Activepieces", icon: <HiCode /> },
+  
+        { name: "Streamlit", icon: <HiCode /> },
+        { name: "Qdrant", icon: <FaDatabase /> },
+  
+        { name: "Cursor", icon: <HiCode /> },
+        { name: "Docling", icon: <HiCode /> },
+        { name: "GitHub", icon: <FaTools /> }
+      ]
+    }
+  ];
 
 const containerAnimation = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.08,
-            delayChildren: 0.2
-        }
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.2
     }
-};
-
-const itemAnimation = {
-    hidden: { opacity: 0, y: 20, scale: 0.9 },
-    show: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-            duration: 0.6,
-            ease: [0.23, 1, 0.32, 1]
-        }
-    }
+  }
 };
 
 const SkillsShowcase = () => {
-    return (
-        <motion.div
-            variants={containerAnimation}
-            initial="hidden"
-            animate="show"
-            className="w-full mt-20"
-        >
-            <div className="container mx-auto px-4 sm:px-6 md:px-8">
-                <motion.div 
-                    variants={itemAnimation} 
-                    className="flex items-center gap-2 mb-8 sm:mb-12 justify-center"
-                >
-                    <div className="inline-flex items-center space-x-2 bg-secondary/10 border-[1.8px] border-zinc-900/70 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-primary backdrop-blur-sm shadow-lg">
-                        <HiCode className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                        <span className="text-xs sm:text-sm font-semibold text-primary">Tech Stack</span>
-                    </div>
-                </motion.div>
+  return (
+    <motion.div
+      variants={containerAnimation}
+      initial="hidden"
+      animate="show"
+      className="w-full mt-12"
+    >
+      <div className="mt-12">
 
-                <motion.div
-                    variants={containerAnimation}
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 w-full"
-                    style={{ 
-                        gridAutoRows: 'minmax(90px, auto)',
-                        gridAutoFlow: 'row dense'
-                    }}
-                >
-                {skills.map((skill, index) => (
-                    <motion.div
-                        key={skill.name}
-                        variants={itemAnimation}
-                        className={`relative group ${skill.size}`}
-                    >
-                        <div
-                            className="
-                                bg-black
-                                border-white/30
-                                border 
-                                p-2.5 sm:p-4 md:p-6
-                                rounded-lg sm:rounded-xl md:rounded-2xl
-                                backdrop-blur-md 
-                                cursor-default
-                                relative overflow-hidden
-                                h-full
-                                w-full
-                                min-h-[90px] sm:min-h-[120px]
-                                flex flex-col items-center justify-center
-                                box-border
-                                shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_10px_rgba(255,255,255,0.05)]
-                                transition-all duration-300
-                                group-hover:border-white/60
-                                group-hover:shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_20px_rgba(255,255,255,0.1)]
-                            "
-                            style={{ height: '100%' }}
-                        >
-                            {/* Shiny overlay effect */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shiny-sweep" />
-                            </div>
-                            
-                            {/* Glossy shine effect */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
-                                <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-2xl" />
-                            </div>
-                            
-                            <div className="relative flex flex-col items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 w-full z-10">
-                                {/* Icon container */}
-                                <div className="relative">
-                                    <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-md sm:rounded-lg md:rounded-xl bg-black border border-white/30 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:border-white/60 group-hover:shadow-white/20 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]">
-                                        <div className="text-white drop-shadow-lg transition-transform duration-300 group-hover:scale-110">
-                                            {skill.icon}
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                {/* Skill name */}
-                                <div className="flex flex-col items-center gap-0.5 sm:gap-1 w-full px-0.5 sm:px-1">
-                                    <span className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-bold text-white text-center tracking-tight transition-all duration-300 group-hover:text-white/90 break-words leading-tight">
-                                        {skill.name}
-                                    </span>
-                                    <div className="w-5 sm:w-6 md:w-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent rounded-full transition-all duration-300 group-hover:via-white/60" />
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
+        {/* Heading */}
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
+          Tech Stacks
+        </h1>
+
+        <div className="grid md:grid-cols-2 gap-10">
+
+          {skillCategories.map((category) => (
+            <div key={category.title}>
+
+              {/* Category Title */}
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <span className="text-xl">{category.icon}</span>
+                <h2 className="text-xl font-semibold">{category.title}</h2>
+              </div>
+
+              {/* Skills */}
+              <div className="flex flex-wrap gap-2 justify-center">
+
+              {category.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className={`
+                      flex items-center gap-2 px-3 py-1 rounded-full border text-sm
+                      ${skill.highlight
+                        ? "bg-white text-black border-white font-semibold"
+                        : "border-white/30 text-gray-300"
+                      }
+                    `}
+                  >
+                    <span className="text-sm">{skill.icon}</span>
+                    <span>{skill.name}</span>
+                  </div>
                 ))}
-                </motion.div>
+
+              </div>
             </div>
-        </motion.div>
-    );
+          ))}
+
+        </div>
+      </div>
+    </motion.div>
+  );
 };
 
 export default SkillsShowcase;
-

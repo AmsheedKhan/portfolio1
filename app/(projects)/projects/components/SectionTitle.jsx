@@ -16,14 +16,13 @@ const SectionTitle = () => (
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
             <div className="space-y-4 max-w-2xl">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight">
-                    Featured Work & Projects
+                    Featured Projects & case Studies
                 </h2>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    A curated selection of my professional work and personal projects,
-                    showcasing expertise in{' '}
-                    <span className="text-primary">full-stack development</span>,{' '}
-                    <span className="text-primary">UI/UX design</span>, and{' '}
-                    <span className="text-primary">cloud architecture</span>.
+                Real-world AI systems built with {' '}
+                    <span className="text-primary">LLMs,</span>,{' '}
+                    <span className="text-primary"> RAG,</span>, and{' '}
+                    <span className="text-primary">intelligent automation</span>.
                 </p>
             </div>
 
@@ -49,16 +48,16 @@ const SectionTitle = () => (
 
         <div className="flex items-center gap-6 pt-2 overflow-x-auto pb-2 scrollbar-hide">
             <div className="space-y-1 flex-shrink-0">
-                <span className="text-xl sm:text-2xl font-bold text-primary">50+</span>
+                <span className="text-xl sm:text-2xl font-bold text-primary">30+</span>
                 <p className="text-xs sm:text-sm text-muted-foreground whitespace-nowrap">
                     Projects Completed
                 </p>
             </div>
             <div className="w-px h-8 sm:h-10 bg-primary/10 flex-shrink-0" />
             <div className="space-y-1 flex-shrink-0">
-                <span className="text-xl sm:text-2xl font-bold text-primary">3+</span>
+                <span className="text-xl sm:text-2xl font-bold text-primary">1+</span>
                 <p className="text-xs sm:text-sm text-muted-foreground whitespace-nowrap">
-                    Years Experience
+                    Years Experience in Free lancing
                 </p>
             </div>
         </div>
