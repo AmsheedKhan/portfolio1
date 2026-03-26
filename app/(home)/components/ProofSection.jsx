@@ -13,17 +13,17 @@ export default function ProofSection() {
         </div>
 
         <div>
-          <h3 className="text-3xl font-bold">2</h3>
-          <p className="text-gray-400">RAG Systems</p>
+          <h3 className="text-3xl font-bold">2+</h3>
+          <p className="text-gray-400">Active RAG Systems</p>
         </div>
 
         <div>
-          <h3 className="text-3xl font-bold">2</h3>
-          <p className="text-gray-400">AI Chatbots</p>
+          <h3 className="text-3xl font-bold">2+</h3>
+          <p className="text-gray-400">Active AI Chatbots</p>
         </div>
 
         <div>
-          <h3 className="text-3xl font-bold">1</h3>
+          <h3 className="text-3xl font-bold">2+</h3>
           <p className="text-gray-400">Automation System</p>
         </div>
       </div>
