@@ -1,6 +1,6 @@
 ![Thumbnail ](images/Thumbnail.png)
 
-# Huzaif Ahmed - Portfolio Website
+# Amsheed - Portfolio Website
 
 A modern and responsive portfolio website to showcase my projects, skills, and experiences. Built with Next.js and styled using Tailwind CSS, this portfolio provides a seamless user experience with smooth animations and an organized layout.
 
@@ -29,13 +29,13 @@ A modern and responsive portfolio website to showcase my projects, skills, and e
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/huzaifahmedz/portfolio-website.git
+   git clone https://github.com/Amsheedkhan/portfolio1.git
    ```
 
 2. Navigate into the project directory:
 
    ```bash
-   cd portfolio-website
+   cd portfolio1
    ```
 
 3. Install dependencies:
