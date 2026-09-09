@@ -27,6 +27,7 @@ export const ProjectCard = ({ project, index }) => {
         <img
           src={project.image}
           alt={project.title}
+          onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/logo.png"; }}
           className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
         />
         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition" />
@@ -44,7 +45,7 @@ export const ProjectCard = ({ project, index }) => {
 
       {/* SHORT DESCRIPTION */}
       <p className="text-sm text-gray-400">
-        {project.hook}
+        {project.hook || project.description}
       </p>
 
       {/* TECH TAGS */}
@@ -126,20 +127,28 @@ export const ProjectCard = ({ project, index }) => {
             )}
 
           {/* BUTTONS */}
-          <div className="flex gap-3 mt-4">
-            <Button size="sm" className="rounded-full text-xs" asChild>
-              <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                Live Demo <FaExternalLinkAlt className="ml-1 w-3 h-3" />
-              </a>
-            </Button>
+          {(project.demo && project.demo !== "#") || (project.github && project.github !== "#") ? (
+            <div className="flex gap-3 mt-4">
+              {project.demo && project.demo !== "#" && (
+                <Button size="sm" className="rounded-full text-xs" asChild>
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                    Live Demo <FaExternalLinkAlt className="ml-1 w-3 h-3" />
+                  </a>
+                </Button>
+              )}
 
-            <Button size="sm" variant="outline" className="rounded-full text-xs" asChild>
-              <a href={project.github} target="_blank">
-                <FaGithub className="mr-1 w-3 h-3" />
-                GitHub
-              </a>
-            </Button>
-          </div>
+              {project.github && project.github !== "#" && (
+                <Button size="sm" variant="outline" className="rounded-full text-xs" asChild>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <FaGithub className="mr-1 w-3 h-3" />
+                    GitHub
+                  </a>
+                </Button>
+              )}
+            </div>
+          ) : (
+            <p className="text-xs text-gray-500 mt-4 italic">Code private / demo coming soon</p>
+          )}
 
         </div>
       </div>

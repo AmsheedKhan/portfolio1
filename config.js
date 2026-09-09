@@ -37,6 +37,7 @@ export const config = {
         {
           id: 1,
           title: "Document Intelligence RAG System",
+          hook: "Semantic search over PDFs — ask questions, get grounded answers with sources.",
           description: "Built a production-grade Retrieval-Augmented Generation (RAG) system to extract insights from PDFs and unstructured documents using embeddings, vector search, and LLM reasoning.",
           problem: "Unstructured documents like PDFs are difficult to search and extract meaningful insights from.",
           solution: "Designed a pipeline using chunking, embeddings, FAISS vector search, and LLMs to enable semantic querying over documents.",
@@ -49,6 +50,7 @@ export const config = {
         {
           id: 2,
           title: "Agentic RAG System",
+          hook: "Planner, retriever, and evaluator agents collaborate to self-check their own answers.",
           description: "Developed a multi-agent RAG system where planner, retriever, and evaluator agents collaborate to generate accurate and validated responses.",
           problem: "Standard RAG systems lack reasoning and often return incomplete or incorrect answers.",
           solution: "Implemented a multi-agent architecture using LangGraph with task delegation, memory, and evaluation loops.",
@@ -61,6 +63,7 @@ export const config = {
         {
           id: 3,
           title: "Multimodal RAG (Vision + Text)",
+          hook: "Reads screenshots and tables, not just plain text — one pipeline for vision and language.",
           description: "Built a multimodal AI system that processes images, documents, and text using vision-language models for structured extraction and Q&A.",
           problem: "Traditional RAG systems cannot handle visual data like images, tables, or screenshots.",
           solution: "Integrated OCR, vision models (Gemini Vision, LLaVA), and LLMs for multimodal understanding.",
@@ -73,6 +76,7 @@ export const config = {
         {
           id: 4,
           title: "LinkedIn Automation & Lead Generator",
+          hook: "Scrapes and scores leads, then drafts personalized outreach automatically.",
           description: "Developed an AI-powered automation system for lead generation, profile scraping, and personalized outreach workflows.",
           problem: "Manual lead generation and outreach are time-consuming and inefficient.",
           solution: "Built automation pipelines using Selenium, scraping tools, and LLM-based personalization.",
@@ -85,6 +89,7 @@ export const config = {
         {
           id: 5,
           title: "Gesture-Based Document Navigation",
+          hook: "Control slides and documents with hand gestures — no mouse, no clicker.",
           description: "Built a real-time hand tracking system to control presentations and documents using gestures.",
           problem: "Traditional input methods limit interaction in presentations and accessibility use cases.",
           solution: "Implemented gesture recognition using MediaPipe and OpenCV for real-time control.",
@@ -97,6 +102,7 @@ export const config = {
         {
           id: 6,
           title: "Adaptive Diabetes Risk Classifier",
+          hook: "Detects when incoming data drifts and retrains itself to hold its accuracy.",
           description: "Developed a machine learning system that detects data drift and retrains itself to maintain prediction accuracy.",
           problem: "ML models degrade over time due to changing data distributions.",
           solution: "Implemented drift detection and automated retraining pipelines.",
@@ -109,6 +115,7 @@ export const config = {
         {
           id: 7,
           title: "Next Word Predictor (LSTM)",
+          hook: "LSTM sequence model predicting the next word in real time.",
           description: "Built an NLP model using LSTM networks to predict the next word in a sequence with real-time inference.",
           problem: "Typing efficiency can be improved with predictive text systems.",
           solution: "Trained sequence models using LSTM and deployed via API.",

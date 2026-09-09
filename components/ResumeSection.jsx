@@ -21,7 +21,7 @@ export default function ResumeSection() {
 
         <div className="mt-8">
           <a
-            href="/resume.pdf"
+            href="/AmsheedResume.pdf"
             download
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition"
           >

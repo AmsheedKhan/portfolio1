@@ -112,7 +112,7 @@ const HeroSection = () => {
               </Link>
 
               {/* RESUME */}
-              <a href="/resume.pdf" download>
+              <a href="/AmsheedResume.pdf" download>
                 <Button
                   variant="outline"
                   className="rounded-full px-6 py-6 text-base border-white/20 hover:border-white/40"
@@ -133,7 +133,7 @@ const HeroSection = () => {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">10+</h2>
+                <h2 className="text-2xl font-bold text-white">{config.projects.length}+</h2>
                 <p className="text-gray-400 text-sm">AI Projects</p>
               </div>
 
@@ -143,7 +143,6 @@ const HeroSection = () => {
               </div>
 
             </motion.div>
-            <span className="text-primary">AI ystems</span>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
